@@ -1,7 +1,8 @@
+# 📘 Assignment 05 - JavaScript DOM & Events
 
-#### 1. What is the difference between **getElementById, getElementsByClassName, and querySelector / querySelectorAll**?
+### 1. What is the difference between **getElementById, getElementsByClassName, and querySelector / querySelectorAll**?
 
-- #### Answer: 
+#### ✅ Answer:  
 **Difference:**
 
  1. **getElementById** allows to access the specific element by using JavaScript DOM MODEL. ID should be unique in JavaScript. If multiple ID with same name **getElementById** will return first One Only. If no id found it will return null.
@@ -12,10 +13,11 @@
  
  4. **querySelector** allows to access element by using css selector as like ** querySelectorAll**. But access only first element of given css selector.
  
+---
 
-#### 2. How do you **create and insert a new element into the DOM**?
+### 2. How do you **create and insert a new element into the DOM**?
 
-- #### Answer: 
+#### ✅ Answer:  
    I can create a new element by using DOM creation methods: **document.createElement**.
  
   I can insert a new element into the DOM by using **appendChild**.
@@ -31,6 +33,7 @@
    callHistoryContainer.appendChild(div);
 
 ```
+---
 
 3. What is **Event Bubbling** and how does it work?
 
@@ -39,54 +42,90 @@
     
     Example:
     
-    ```html
+```html
     
-    <div id="container">
-     <ul id="ul-lists">
-      <li id="list-item"></li>
-     </ul>
-    </div>
-    ```
-    ```javascript
-    document.getElementById('list-item').addEventListner('click', function() {
-      
-      console.log('list item clicked')
-    } )
-     
-     document.getElementById('ul-lists').addEventListner('click', function() {
-      
-      console.log('Unordered clicked')
-    } )
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Bubbling Example</title>
+  <style>
+    ul {
+      border: 2px solid red;
+      height: 200px;
+      width: 400px;
+      padding: 20px;
+    }
+    div {
+      border: 2px solid green;
+      height: 300px;
+      width: 600px;
+      padding: 40px;
+    }
+    li {
+      border: 2px solid violet;
+      height: 30px;
+      width: 60px;
+      padding: 10px;
+      list-style: none;
+    }
+  </style>
+</head>
+<body>
+  
+<div id="container">
+  <ul id="ul-lists">
+    <li id="list-item">Tree</li>
+  </ul>
+</div>
 
-    document.getElementById('container').addEventListner('click', function() {
-      
-      console.log('container clicked')
-    } )
+<script>
+  document.getElementById('list-item').addEventListener('click', function() {
+    console.log('list item clicked');
+  });
 
-``
+  document.getElementById('ul-lists').addEventListener('click', function() {
+    console.log('Unordered clicked');
+  });
+
+  document.getElementById('container').addEventListener('click', function() {
+    console.log('container clicked');
+  });
+</script>
+
+</body>
+</html>
+
+```
 
   **Output:**
-    -list item clicked
-    -Unordered clicked
-    -container clicked
+    - list item clicked
+    - Unordered clicked
+    - container clicked
 
    if I clicked on list-items. first it executes list items addEventListner then it go upwards by event bubbling and executes ul-list event listner and container event listner.
 
+---
 
-#### 4. What is **Event Delegation** in JavaScript? Why is it useful?
-  - #### Answer:
-    Event Delegation is a technique to handle event efficiently. It use **addEventListner** to the parent instead of children.From parent it can now call any of the child element and modify it.
+### 4. What is **Event Delegation** in JavaScript? Why is it useful?
+ 
+#### ✅ Answer: 
 
-     **Use:**
-      - 1. It is use to handle several child.  elements from parent elements.
-      - 2. It can handle particular child      element.
-      - 3. It can handle target element by which child triggered it.
-     
-#### 5. What is the difference between **preventDefault() and stopPropagation()** methods?
+   Event Delegation is a technique to handle event efficiently. It use **addEventListner** to the parent instead of children.From parent it can now call any of the child element and modify it.
 
-  - #### Answer:
+   **Uses:**
+1. It is use to handle several child elements from parent elements.  
+2. It can handle particular child element.  
+3. It can handle target element by which child triggered it.  
+
+---
+
+### 5. What is the difference between **preventDefault() and stopPropagation()** methods?
+
+  #### ✅ Answer: 
   
-    **stopPropagation** stops the events from upwards bubblings to its parents divs. So it stops the execution of the event Listner of its parent divs.
+   **stopPropagation** stops the events from upwards bubblings to its parents divs. So it stops the execution of the event Listner of its parent divs.
 
-    Other hand, **preventDefault** stops the default behavior of the elements such as form submission or link navigation. It does not stop bubblings.
+   Other hand, **preventDefault** stops the default behavior of the elements such as form submission or link navigation. It does not stop bubblings.
     
