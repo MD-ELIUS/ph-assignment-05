@@ -103,3 +103,21 @@ document.getElementById('clear-btn').addEventListener('click', function() {
 
 } )
 
+
+
+// Refund Function
+
+document.getElementById('refund-btn').addEventListener('click', function() {
+  
+ const totalCoin = document.getElementById('coin-count').innerText ;
+  
+ const totalCoinNumber = parseInt(totalCoin);
+ 
+ if(totalCoin >= 20 ) {
+   alert('You have enough coin to call. Refund When coin less than 20.')
+   return
+ }
+ 
+ document.getElementById('coin-count').innerText = '100'
+ 
+} )
