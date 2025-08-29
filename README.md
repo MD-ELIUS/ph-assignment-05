@@ -35,12 +35,12 @@
 ```
 ---
 
-3. What is **Event Bubbling** and how does it work?
+### 3. What is **Event Bubbling** and how does it work?
 
-- #### Answer: 
-    When an event is triggered on child elements.First of All it propagates from root element to child elements. After this it propagates again go back upwards through DOM tree from child to parent. This upwards propagation is called ***event bubbling.*** During event bubbling it executes all event listner from child to upwards parents.
+  #### ✅ Answer: 
+   When an event is triggered on child elements.First of All it propagates from root element to child elements. After this it propagates again go back upwards through DOM tree from child to parent. This upwards propagation is called ***event bubbling.*** During event   bubbling it executes all event listner from child to upwards parents.
     
-    Example:
+   Example:
     
 ```html
     
