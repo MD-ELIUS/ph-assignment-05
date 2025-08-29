@@ -70,4 +70,24 @@ if (availableCoinNumber < 20) {
 
 
 
+//Copy Button Function
+
+document.querySelectorAll('.copy-btn').forEach(function(copyBtn) {
+  
+  copyBtn.addEventListener('click', function(event) {
+   
+    const copyCount = document.getElementById('copy-count').innerText
     
+    const copyCountNumber = parseInt(copyCount);
+
+    const card = event.target.closest('.card')
+     const serviceNumber = card.querySelector('.number').innerText
+
+    alert(`Number is copied ${serviceNumber}`)
+    document.getElementById('copy-count').innerText = copyCountNumber + 1
+
+    navigator.clipboard.writeText(serviceNumber)
+
+   
+  })
+})
