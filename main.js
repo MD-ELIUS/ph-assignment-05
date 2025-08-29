@@ -91,3 +91,15 @@ document.querySelectorAll('.copy-btn').forEach(function(copyBtn) {
    
   })
 })
+
+
+// Clear button Function
+
+document.getElementById('clear-btn').addEventListener('click', function() {
+
+   const callHistoryContainer = document.getElementById('call-history-container') ;
+
+   callHistoryContainer.innerHTML =''
+
+} )
+
